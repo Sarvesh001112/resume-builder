@@ -1,0 +1,74 @@
+import {createSlice} from '@reduxjs/toolkit';
+export const PersonalInfoSlice=createSlice({
+    name:"PersonalInfo",
+    initialState:{
+        firstName:"",
+        lastName:"",
+        imageUrl:"",
+        dateOfBirth:{date:"",dateString:""},
+        maritalStatus:"",
+        nationality:"",
+        occupation:"",
+        fatherName:"",
+        basicSummary:""
+    },
+    reducers:{
+        updateFirstName:(state,action)=>{
+            return{
+                ...state,
+                firstName:action.payload.data
+            }
+        },
+        updateLastName:(state,action)=>{
+            return{
+                ...state,
+                lastName:action.payload.data
+            }
+        },
+        updateProfilePicture:(state,action)=>{
+            return{
+                ...state,
+                imageUrl:action.payload.data
+            }
+        },
+        updateDateOfBirth:(state,action)=>{
+            return{
+                ...state,
+                dateOfBirth:action.payload.data
+            }
+        },
+        updateMaritalStatus:(state,action)=>{
+            return{
+                ...state,
+                maritalStatus:action.payload.data
+            }
+        },
+        updateNationality:(state,action)=>{
+            return{
+                ...state,
+                nationality:action.payload.data
+            }
+        },
+        updateOccupation:(state,action)=>{
+            return{
+                ...state,
+                occupation:action.payload.data
+            }
+        },
+        updateFatherName:(state,action)=>{
+            return{
+                ...state,
+                fatherName:action.payload.data
+            }
+        },
+        updateBasicSummary:(state,action)=>{
+            return{
+                ...state,
+                basicSummary:action.payload.data
+            }
+        }
+    }
+});
+
+export default PersonalInfoSlice.reducer;
+export const {updateFirstName,updateLastName,updateOccupation,updateDateOfBirth,updateMaritalStatus,updateNationality,updateFatherName,updateBasicSummary,updateProfilePicture}=PersonalInfoSlice.actions;
